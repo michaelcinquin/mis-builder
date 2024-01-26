@@ -235,7 +235,7 @@ class KpiMatrix:
         assert len(vals) == col.colspan
         assert len(drilldown_args) == col.colspan
         for val, drilldown_arg, subcol in zip(
-            vals, drilldown_args, col.iter_subcols(), strict=True
+            vals, drilldown_args, col.iter_subcols()
         ):
             if isinstance(val, DataError):
                 val_rendered = val.name
@@ -350,8 +350,7 @@ class KpiMatrix:
                 for val, base_val, comparison_subcol in zip(
                     vals,
                     base_vals,
-                    comparison_col.iter_subcols(),
-                    strict=True,
+                    comparison_col.iter_subcols()
                 ):
                     # TODO FIXME average factors
                     comparison = self._style_model.compare_and_render(
